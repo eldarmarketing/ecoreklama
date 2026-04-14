@@ -7,12 +7,9 @@ import VideoSection from "./components/VideoSection";
 import PricingSection from "./components/PricingSection";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
-import LeafParticles from "./components/LeafParticles";
-
 export default function Home() {
   return (
     <>
-      <LeafParticles />
       <Header />
       <main>
         <HeroSection />
