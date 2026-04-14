@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const NAV = [
   { label: "Как это работает", href: "#how" },
@@ -74,8 +75,9 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* CTA + burger */}
-        <div className="flex items-center gap-3">
+        {/* CTA + theme + burger */}
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
           <a
             href="#contact"
             className="hidden sm:flex items-center t-btn px-5 py-2.5 rounded-xl bg-primary text-on-primary no-underline transition-transform hover:scale-[1.03] active:scale-[0.97]"
