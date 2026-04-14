@@ -1,26 +1,196 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─── GT Eesti Pro Display ─── */
+@font-face { font-family: 'GT Eesti'; src: url('/fonts/GTEestiProDisplay-Thin.woff2') format('woff2'); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GT Eesti'; src: url('/fonts/GTEestiProDisplay-Light.woff2') format('woff2'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GT Eesti'; src: url('/fonts/GTEestiProDisplay-Regular.woff2') format('woff2'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GT Eesti'; src: url('/fonts/GTEestiProDisplay-Medium.woff2') format('woff2'); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GT Eesti'; src: url('/fonts/GTEestiProDisplay-Bold.woff2') format('woff2'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: 'GT Eesti'; src: url('/fonts/GTEestiProDisplay-UltraBold.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* ─── Base CSS variables for light/dark switch ─── */
+:root {
+  --c-primary: #1B6B3A;
+  --c-on-primary: #FFFFFF;
+  --c-primary-ctr: #D7F2DF;
+  --c-on-primary-ctr: #00210D;
+  --c-secondary: #4E6355;
+  --c-on-secondary: #FFFFFF;
+  --c-secondary-ctr: #D0E9D6;
+  --c-on-secondary-ctr: #0B1F14;
+  --c-tertiary: #3D6373;
+  --c-on-tertiary: #FFFFFF;
+  --c-tertiary-ctr: #C1E8FB;
+  --c-on-tertiary-ctr: #001F2A;
+  --c-surface: #FFFFFF;
+  --c-on-surface: #1A1C1A;
+  --c-on-surface-v: #6B7770;
+  --c-srf-lowest: #FFFFFF;
+  --c-srf-low: #F5F7F4;
+  --c-srf-ctr: #EFF1EE;
+  --c-srf-high: #E8EBE7;
+  --c-srf-highest: #DFE2DD;
+  --c-srf-dim: #D7DCD5;
+  --c-outline: #9EA69D;
+  --c-outline-v: #C5CDC3;
+  --c-inv-surface: #2E312E;
+  --c-inv-on-surface: #EFF2EC;
+  --c-inv-primary: #88D99E;
+  --c-error: #BA1A1A;
+  --c-on-error: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --c-primary: #88D99E;
+    --c-on-primary: #00391A;
+    --c-primary-ctr: #005228;
+    --c-on-primary-ctr: #A4F5B8;
+    --c-secondary: #B4CDBA;
+    --c-on-secondary: #203528;
+    --c-secondary-ctr: #374B3E;
+    --c-on-secondary-ctr: #D0E9D6;
+    --c-tertiary: #A5CCDF;
+    --c-on-tertiary: #073543;
+    --c-tertiary-ctr: #244C5B;
+    --c-on-tertiary-ctr: #C1E8FB;
+    --c-surface: #111411;
+    --c-on-surface: #DFE4DD;
+    --c-on-surface-v: #BFC8BD;
+    --c-srf-lowest: #0C0F0C;
+    --c-srf-low: #191C19;
+    --c-srf-ctr: #1D201D;
+    --c-srf-high: #282B27;
+    --c-srf-highest: #323632;
+    --c-srf-dim: #111411;
+    --c-outline: #8B938A;
+    --c-outline-v: #414941;
+    --c-inv-surface: #DFE4DD;
+    --c-inv-on-surface: #2E312E;
+    --c-inv-primary: #1B6B3A;
+    --c-error: #FFB4AB;
+    --c-on-error: #690005;
   }
 }
 
+/* ─── Tailwind v4 theme (NO inline — emits CSS vars) ─── */
+@theme {
+  --color-primary: var(--c-primary);
+  --color-on-primary: var(--c-on-primary);
+  --color-primary-ctr: var(--c-primary-ctr);
+  --color-on-primary-ctr: var(--c-on-primary-ctr);
+  --color-secondary: var(--c-secondary);
+  --color-on-secondary: var(--c-on-secondary);
+  --color-secondary-ctr: var(--c-secondary-ctr);
+  --color-on-secondary-ctr: var(--c-on-secondary-ctr);
+  --color-tertiary: var(--c-tertiary);
+  --color-on-tertiary: var(--c-on-tertiary);
+  --color-tertiary-ctr: var(--c-tertiary-ctr);
+  --color-on-tertiary-ctr: var(--c-on-tertiary-ctr);
+  --color-surface: var(--c-surface);
+  --color-on-surface: var(--c-on-surface);
+  --color-on-surface-v: var(--c-on-surface-v);
+  --color-srf-lowest: var(--c-srf-lowest);
+  --color-srf-low: var(--c-srf-low);
+  --color-srf-ctr: var(--c-srf-ctr);
+  --color-srf-high: var(--c-srf-high);
+  --color-srf-highest: var(--c-srf-highest);
+  --color-srf-dim: var(--c-srf-dim);
+  --color-outline: var(--c-outline);
+  --color-outline-v: var(--c-outline-v);
+  --color-inv-surface: var(--c-inv-surface);
+  --color-inv-on-surface: var(--c-inv-on-surface);
+  --color-inv-primary: var(--c-inv-primary);
+  --color-error: var(--c-error);
+  --color-on-error: var(--c-on-error);
+}
+
+/* ─── Base ─── */
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--c-surface);
+  color: var(--c-on-surface);
+  font-family: 'GT Eesti', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* ─── Typography — T-Bank scale ─── */
+.t-display  { font-size: clamp(36px, 5vw, 56px); line-height: 1.1; font-weight: 700; letter-spacing: -0.02em; }
+.t-h1       { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; }
+.t-h2       { font-size: clamp(24px, 3vw, 36px); line-height: 1.2; font-weight: 700; letter-spacing: -0.01em; }
+.t-h3       { font-size: clamp(20px, 2.5vw, 28px); line-height: 1.25; font-weight: 600; }
+.t-h4       { font-size: 20px; line-height: 1.3; font-weight: 600; }
+.t-body     { font-size: 16px; line-height: 1.6; font-weight: 400; }
+.t-body-s   { font-size: 14px; line-height: 1.5; font-weight: 400; }
+.t-caption  { font-size: 13px; line-height: 1.4; font-weight: 400; }
+.t-label    { font-size: 14px; line-height: 1.4; font-weight: 500; }
+.t-btn      { font-size: 15px; line-height: 1; font-weight: 600; }
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-outline-v); border-radius: 9999px; }
+
+/* ─── Gradient text ─── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--c-primary), var(--c-tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Blob animation ─── */
+@keyframes blob-morph {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 60% / 30% 60% 70% 40%; }
+  75% { border-radius: 60% 40% 60% 40% / 70% 30% 50% 60%; }
+}
+.eco-blob { animation: blob-morph 20s ease-in-out infinite; }
+
+/* ─── Leaf fall ─── */
+@keyframes leaf-fall {
+  0% { transform: translateY(-10vh) rotate(0deg) scale(1); opacity: 0; }
+  10% { opacity: 0.6; }
+  50% { transform: translateY(50vh) rotate(360deg) scale(0.8); }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(110vh) rotate(720deg) scale(0.6); opacity: 0; }
+}
+
+/* ─── Phone frame for vertical video ─── */
+.phone-frame {
+  position: relative;
+  width: 260px;
+  height: 520px;
+  border-radius: 36px;
+  overflow: hidden;
+  background: #000;
+  box-shadow:
+    0 0 0 3px var(--c-on-surface),
+    0 0 0 6px var(--c-srf-high),
+    0 24px 48px -12px rgba(0, 0, 0, 0.2);
+}
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  background: var(--c-on-surface);
+  border-radius: 0 0 16px 16px;
+  z-index: 10;
+}
+.phone-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .phone-frame { width: 300px; height: 600px; }
 }
