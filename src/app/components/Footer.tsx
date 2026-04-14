@@ -6,16 +6,20 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 py-8 md:py-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center">
+          <div className="flex items-center gap-2">
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <svg width="32" height="32" viewBox="0 0 36 36" fill="none" className="absolute inset-0">
+                <circle cx="18" cy="18" r="15" stroke="var(--c-primary)" strokeWidth="2.5" strokeDasharray="4 3" />
+              </svg>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"
-                  fill="var(--c-on-primary)"
-                />
+                <path d="M6 21c1.5-5 3-9 9-13 0 0-4 6-3 13" stroke="var(--c-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M9 8c3-4 8-6 13-6-1 6-3 11-7 14" stroke="var(--c-primary)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className="t-label text-on-surface">ЭкоРеклама</span>
+            <div className="flex flex-col leading-none">
+              <span className="t-label text-on-surface font-bold tracking-[-0.02em]">эко<span className="text-primary">реклама</span></span>
+              <span className="text-on-surface-v text-[8px] font-medium tracking-[0.12em] uppercase">на асфальте</span>
+            </div>
           </div>
 
           {/* Links */}

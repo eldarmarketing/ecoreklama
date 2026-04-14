@@ -27,18 +27,38 @@ export default function Header() {
     >
       <div className="max-w-[1200px] mx-auto flex items-center justify-between px-5 md:px-8 h-16 md:h-[72px]">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 no-underline">
-          <div className="w-9 h-9 rounded-md bg-primary flex items-center justify-center">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <a href="#" className="flex items-center gap-2 no-underline group">
+          <div className="relative w-9 h-9 flex items-center justify-center">
+            {/* Stencil spray circle */}
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" className="absolute inset-0">
+              <circle cx="18" cy="18" r="15" stroke="var(--c-primary)" strokeWidth="2.5" strokeDasharray="4 3" className="transition-all duration-500 group-hover:stroke-dasharray-[8,2]" />
+            </svg>
+            {/* Leaf cutout */}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
               <path
-                d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"
-                fill="var(--c-on-primary)"
+                d="M6 21c1.5-5 3-9 9-13 0 0-4 6-3 13"
+                stroke="var(--c-primary)"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M9 8c3-4 8-6 13-6-1 6-3 11-7 14"
+                stroke="var(--c-primary)"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>
-          <span className="text-on-surface font-semibold text-[17px] tracking-[-0.01em]">
-            ЭкоРеклама
-          </span>
+          <div className="flex flex-col leading-none">
+            <span className="text-on-surface font-bold text-[17px] tracking-[-0.02em]">
+              эко<span className="text-primary">реклама</span>
+            </span>
+            <span className="text-on-surface-v text-[9px] font-medium tracking-[0.12em] uppercase mt-[1px]">
+              на асфальте
+            </span>
+          </div>
         </a>
 
         {/* Desktop nav */}
